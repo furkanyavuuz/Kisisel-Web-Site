@@ -1,0 +1,41 @@
+﻿@using KisiselWebSitesi.Models.Classes
+@model List<HomePage>
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Kişisel Web Sitesi</title>
+    <meta name='viewport' content='width=device-width, initial-scale=1'>
+    <link rel="stylesheet" href="~/web-Website/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body>
+    <div class="center">
+        <div class="avatar">
+            @foreach (var x in Model)
+            {
+                <img src="@x.profil">
+
+            }
+        </div>
+        <div class="content">
+            @foreach (var x in Model)
+            {
+            <h1>@x.isim</h1>
+            <h2>@x.unvan</h2>
+            <p>@x.aciklama</p>
+            <h3>@x.iletisim</h3>
+            }
+        </div>
+        @Html.Action("Icons","HomePage")
+
+    </div>
+
+</body>
+</html>
